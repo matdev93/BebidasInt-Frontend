@@ -10,19 +10,19 @@ import { NavLink } from 'react-router-dom';
 const Navigation = () => {
   return (
     <>
+
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Container>
-          <NavbarBrand href='/'>Bebidas</NavbarBrand>
+          <NavbarBrand as={NavLink} to='/'>Bebidas</NavbarBrand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto'>
               <Nav.Link as={NavLink} to='/'>
                 Inicio
               </Nav.Link>
-              <Nav.Link as={NavLink} to='/catalogo'>
-                Productos
-              </Nav.Link>
-
+            <Nav.Link as={NavLink} to='/products'>
+              Productos
+            </Nav.Link>
               <NavDropdown title='Admin'>
                 <NavDropdown.Item as={NavLink} to='/admin/users'>
                   Users
