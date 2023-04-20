@@ -1,16 +1,18 @@
 .imagenn {
-    max-height: 20rem;
+  width: 640px;
+  height: 360px;
+  object-fit: contain;
 }
 
 .carrucel {
-    margin: 1rem 3rem;
+  margin: 1rem 3rem;
 }
 
 .titulo {
-    text-align: center;
+  text-align: center;
 }
 
-.tarjetas{
-    display: grid;
-    padding: 3rem ;
+.tarjetas {
+  display: grid;
+  padding: 3rem;
 }
