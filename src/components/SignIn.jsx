@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import {
   Avatar,
   Button,
@@ -16,18 +14,24 @@ import {
   ThemeProvider,
 } from '@mui/material';
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import UserContext from '../context/user/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 const theme = createTheme();
 
 export default function SignIn() {
-  const { loginUser } = useContext(UserContext);
+  const navigate = useNavigate();
+  const [signUp, setSignUp] = useState(false);
+  const { loginUser, registerUser } = useContext(UserContext);
 
   const initialValues = {
+    name: '',
     email: '',
     password: '',
   };
+
+  console.log(`Este es el estado de signUp: ${signUp}`);
 
   const [user, setUser] = useState(initialValues);
 
@@ -38,9 +42,23 @@ export default function SignIn() {
     }));
   };
 
+  console.log(user);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    loginUser(user);
+    if (signUp) {
+      registerUser(user);
+    } else {
+      loginUser(user);
+    }
+
+    setUser(initialValues);
+    navigate('/');
+  };
+
+  const changeMode = () => {
+    setSignUp(!signUp);
+    setUser(initialValues);
   };
 
   return (
@@ -57,7 +75,7 @@ export default function SignIn() {
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}></Avatar>
           <Typography component='h1' variant='h5'>
-            Sign in
+            {signUp ? 'Sign up' : 'Sign in'}
           </Typography>
           <Box
             component='form'
@@ -65,6 +83,21 @@ export default function SignIn() {
             noValidate
             sx={{ mt: 1 }}
           >
+            {signUp && (
+              <TextField
+                margin='normal'
+                required
+                id='name'
+                fullWidth
+                autoFocus
+                onChange={handleChange}
+                type='text'
+                placeholder='Juan Perez'
+                name='name'
+                label='name'
+                value={user.name}
+              />
+            )}
             <TextField
               margin='normal'
               required
@@ -89,26 +122,22 @@ export default function SignIn() {
               onChange={handleChange}
               value={user.password}
             />
-            {/* <FormControlLabel
-              control={<Checkbox value='remember' color='primary' />}
-              label='Remember me'
-            /> */}
+
             <Button
               type='submit'
               fullWidth
               variant='contained'
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              {signUp ? 'Sign Up' : 'Sign In'}
             </Button>
             <Grid container>
-              {/* <Grid item xs>
-                <Link href='#' variant='body2'>
-                  Forgot password?
-                </Link>
-              </Grid> */}
               <Grid item>
-                <Button>{"Don't have an account? Sign Up"}</Button>
+                <Button onClick={changeMode}>
+                  {signUp
+                    ? 'Already have an account? Sign In'
+                    : "Don't have an account? Sign Up"}
+                </Button>
               </Grid>
             </Grid>
           </Box>

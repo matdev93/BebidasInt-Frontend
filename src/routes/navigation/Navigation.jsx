@@ -6,8 +6,13 @@ import {
   NavbarBrand,
 } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import UserContext from '../../context/user/UserContext';
 
 const Navigation = () => {
+  const { infoUser, signOut, authStatus } = useContext(UserContext);
+
+  const { name } = infoUser;
   return (
     <>
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
@@ -22,10 +27,12 @@ const Navigation = () => {
               <Nav.Link as={NavLink} to='/catalogo'>
                 Productos
               </Nav.Link>
-
-              <NavDropdown title='Admin'>
-                <NavDropdown.Item as={NavLink} to='/admin/users'>
-                  Users
+              <NavDropdown title='Mi perfil'>
+                <NavDropdown.Item as={NavLink} to='/user/profile'>
+                  Mi Perfil
+                </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to='/user/options'>
+                  Opciones
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
