@@ -24,7 +24,7 @@ const Home = () => {
               <Carousel.Caption>
                 <h3>Las mejores bebidas del mercado</h3>
                 <p>Con las marcas más conocidas a nivel internacional.</p>
-                <Button variant='dark' href='/catalogo'>
+                <Button variant='dark' href='/products'>
                   {' '}
                   Ver Catalogo{' '}
                 </Button>
@@ -39,7 +39,7 @@ const Home = () => {
               <Carousel.Caption>
                 <h3>Segunda Bebida</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <Button variant='dark' href='/catalogo'>
+                <Button variant='dark' href='/products'>
                   {' '}
                   Ver Catalogo{' '}
                 </Button>
@@ -68,7 +68,7 @@ const Home = () => {
                       soluta nam sequi ratione itaque corrupti temporibus!
                     </Card.Text>
                     <Button variant='info'>
-                      <Link to='/catalogo'>Ir a catalogo</Link>
+                      <Link to='/products'>Ir a catalogo</Link>
                     </Button>
                   </Card.Body>
                 </Card>
@@ -89,7 +89,7 @@ const Home = () => {
                       saepe, reprehenderit laboriosam natus sapiente!
                     </Card.Text>
                     <Button variant='info'>
-                      <Link to='/catalogo'>Ir a catalogo</Link>
+                      <Link to='/products'>Ir a catalogo</Link>
                     </Button>
                   </Card.Body>
                 </Card>
@@ -110,7 +110,7 @@ const Home = () => {
                       dolore earum molestias reprehenderit adipisci eveniet.
                     </Card.Text>
                     <Button variant='info'>
-                      <Link to='/catalogo'>Ir a catalogo</Link>
+                      <Link to='/products'>Ir a catalogo</Link>
                     </Button>
                   </Card.Body>
                 </Card>

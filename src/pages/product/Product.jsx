@@ -6,10 +6,8 @@ const Product = () => {
     const { id } = useParams();
   
     const { getProduct, product } = useContext(ProductContext);
-    // const { addItemToCart, cartCount } = useContext(CartContext)
-  
-    // const handleAdd = () => { if(cartCount < stock) addItemToCart(product[0])}
-  
+    const { addItemToCart, cartCount } = useContext(CartContext);
+    const handleAdd = () => { if(cartCount < stock) addItemToCart(product[0])};
     const { name, stock, price, image, SKU, description } = product[0];
   
     useEffect(() => {
@@ -90,7 +88,7 @@ const Product = () => {
                     </p>
   
                     <p className="text-base text-gray-900 mt-6">
-                      <b>Precio</b>: ${price} USD
+                      <b>Precio</b>: ${price}
                     </p>
                     <p className="text-base text-gray-900 mb-6">
                       <b>Stock</b>: {stock}
@@ -104,7 +102,7 @@ const Product = () => {
                         <button
                           type="button"
                           className="mt-10 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        //   onClick={handleAdd} 
+                          onClick={handleAdd} 
                         >
                           Añadir
                         </button>
