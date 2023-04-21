@@ -4,6 +4,7 @@ import {
   NavDropdown,
   Container,
   NavbarBrand,
+  Button,
 } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
@@ -12,7 +13,7 @@ import UserContext from '../../context/user/UserContext';
 const Navigation = () => {
   const { infoUser, signOut, authStatus } = useContext(UserContext);
 
-  const { name } = infoUser;
+  const { name, email } = infoUser;
   return (
     <>
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
@@ -27,19 +28,27 @@ const Navigation = () => {
               <Nav.Link as={NavLink} to='/catalogo'>
                 Productos
               </Nav.Link>
-              <NavDropdown title='Mi perfil'>
-                <NavDropdown.Item as={NavLink} to='/user/profile'>
-                  Mi Perfil
-                </NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to='/user/options'>
-                  Opciones
-                </NavDropdown.Item>
-              </NavDropdown>
+              {authStatus && (
+                <NavDropdown title={name}>
+                  <NavDropdown.Item as={NavLink} to='/user/profile'>
+                    Mi Perfil
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={NavLink} to='/user/options'>
+                    Opciones
+                  </NavDropdown.Item>
+                </NavDropdown>
+              )}
             </Nav>
             <Nav>
-              <Nav.Link as={NavLink} to='/auth'>
-                Login
-              </Nav.Link>
+              {authStatus ? (
+                <Button onClick={signOut} className='me-3'>
+                  Logout
+                </Button>
+              ) : (
+                <Nav.Link as={NavLink} to='/auth'>
+                  Login
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
