@@ -12,6 +12,8 @@ El proyecto 5 consiste en una aplicacion de comercio electrónico de una tienda 
 
 - HTML5
 - CSS3
+- Bootstrap
+- MUI
 - JavaScript
 - ReactJS y React Router
 - ExpressJS
