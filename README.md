@@ -2,11 +2,11 @@
 
 Tabla de contenidos:
 
-- Descripcion del proyecto
+- Descripción del proyecto
 - Tecnologias usadas en el proyecto
 - Link para acceder a la App en Netlify o Github Pages.
 
-# Descripcion del proyecto:
+# Descripción del proyecto:
 
 El proyecto 5 consiste en una aplicacion de comercio electrónico de una tienda de bebidas. Se creo usando las siguientes tecnologias:
 
