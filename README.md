@@ -18,7 +18,7 @@ El proyecto 5 consiste en una aplicacion de comercio electrónico de una tienda 
 - MongoDB
 - Mongoose
 
-#Contenido de la App:
+# Contenido de la App:
 
 - Ruta HOME con el navbar donde se visualizan los productos del comercio, el catalogo con imagenes, hacer login y registro a la pagina.
 - Ruta Login donde el usuario puede registrarse a la pagina y entrar a su perfil.
