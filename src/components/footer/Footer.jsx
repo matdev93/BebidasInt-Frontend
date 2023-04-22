@@ -2,11 +2,8 @@ import { CssBaseline, Box, Typography, Container, Link } from '@mui/material';
 
 function Copyright() {
   return (
-    <Typography variant='body2' color='text.secondary'>
+    <Typography variant='body2' color='text.secondary' style={{ textAlign: 'center'}}>
       {'Copyright © '}
-      <Link color='inherit' href='https://mui.com/'>
-        Your Website
-      </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -19,7 +16,7 @@ export default function StickyFooter() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100vh',
+        minHeight: '40vh',
       }}
     >
       <CssBaseline />
@@ -46,8 +43,8 @@ export default function StickyFooter() {
         }}
       >
         <Container maxWidth='sm'>
-          <Typography variant='body1'>
-            2023 Creado por Matias Aguila y Cedric Noriega, todos los derechos
+          <Typography variant='body1' style={{ textAlign: 'center'}}>
+          {new Date().getFullYear()} Creado por Matias Aguila y Cedric Noriega, todos los derechos
             reservados.
           </Typography>
           <Copyright />

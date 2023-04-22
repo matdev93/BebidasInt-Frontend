@@ -8,11 +8,6 @@ const Home = () => {
   return (
     <div>
       <Col>
-        <div className='col-12'>
-          <h2 className='text-center'>
-            Distribuidora de bebidas Internacionales
-          </h2>
-        </div>
         <div>
           <Carousel className='carrucel text-center'>
             <Carousel.Item>
@@ -22,8 +17,6 @@ const Home = () => {
                 alt='First slide'
               />
               <Carousel.Caption>
-                <h3>Las mejores bebidas del mercado</h3>
-                <p>Con las marcas más conocidas a nivel internacional.</p>
                 <Button variant='dark' href='/products'>
                   {' '}
                   Ver Catalogo{' '}
@@ -37,8 +30,6 @@ const Home = () => {
                 alt='Second slide'
               />
               <Carousel.Caption>
-                <h3>Segunda Bebida</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <Button variant='dark' href='/products'>
                   {' '}
                   Ver Catalogo{' '}
@@ -67,8 +58,8 @@ const Home = () => {
                       vero ipsam quia at tenetur omnis fugit assumenda eaque,
                       soluta nam sequi ratione itaque corrupti temporibus!
                     </Card.Text>
-                    <Button variant='info'>
-                      <Link to='/products'>Ir a catalogo</Link>
+                    <Button variant='dark'>
+                      <Link to='/products' style={{ color: 'white'}}>Ir a catalogo</Link>
                     </Button>
                   </Card.Body>
                 </Card>
@@ -88,8 +79,8 @@ const Home = () => {
                       atque eaque enim facere laborum deleniti harum aliquam
                       saepe, reprehenderit laboriosam natus sapiente!
                     </Card.Text>
-                    <Button variant='info'>
-                      <Link to='/products'>Ir a catalogo</Link>
+                    <Button variant='dark'>
+                      <Link to='/products'  style={{ color: 'white'}} >Ir a catalogo</Link>
                     </Button>
                   </Card.Body>
                 </Card>
@@ -109,8 +100,8 @@ const Home = () => {
                       dolores enim architecto porro cum, ut debitis libero ipsum
                       dolore earum molestias reprehenderit adipisci eveniet.
                     </Card.Text>
-                    <Button variant='info'>
-                      <Link to='/products'>Ir a catalogo</Link>
+                    <Button variant='dark'>
+                      <Link to='/products'  style={{ color: 'white'}}>Ir a catalogo</Link>
                     </Button>
                   </Card.Body>
                 </Card>

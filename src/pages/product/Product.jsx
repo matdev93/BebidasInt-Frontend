@@ -2,6 +2,7 @@ import ProductContext from "../../context/product/ProductContext";
 import { useContext, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import CartContext from "../../context/cart/CartContext";
+import { Button } from "react-bootstrap";
 
 const Product = () => {
     const { id } = useParams();
@@ -30,13 +31,8 @@ const Product = () => {
                     className="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8"
                   >
                     <li>
-                      <div className="flex items-center">
-                        <Link
-                          to="/products"
-                          className="mr-2 text-sm font-medium text-gray-900"
-                        >
-                          Catálogo
-                        </Link>
+                      <div >
+                        <Link to="/products"> Catálogo </Link>
                         <svg
                           width="16"
                           height="20"
@@ -66,8 +62,7 @@ const Product = () => {
                   <div className="w-full rounded-lg overflow-hidden lg:block">
                     <img
                       src={image}
-                      alt="Two each of gray, white, and black shirts laying flat."
-                      className="w-full h-80 object-center object-cover"
+                      style={{ width: '150px' }}
                     />
                   </div>
                 </div>
@@ -100,13 +95,12 @@ const Product = () => {
                     ) : (
                       <Link to="/crear-cuenta">
                         {" "}
-                        <button
-                          type="button"
-                          className="mt-10 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        <Button
+                          variant="dark"
                           onClick={handleAdd} 
                         >
                           Añadir
-                        </button>
+                        </Button>
                       </Link>
                     )}
                   </div>

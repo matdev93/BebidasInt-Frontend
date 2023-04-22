@@ -15,16 +15,16 @@ const Products = () => {
 
     return (
         <div>
-            <h1>Nuestros Productos</h1>
-            <Row xs={1} md={3} className='g-4 tarjeta'>
+            <h1 style={{ textAlign:'center', margin:'10px' }}>Nuestros Productos</h1>
+            <Row xs={1} md={4} className='g-4 tarjeta' style={{margin:'10px'}}>
                 {products && products.map((product) => (
-                    <Card key={product._id}>
+                    <Card key={product._id} style={{ textAlign:'center', margin:'10px' }}>
                         <Link to={`/product/${product._id}`}>
-                            <Card.Img variant="top" src={product.image} alt={product.name} style={{ width: '250px' }} />
+                            <Card.Img variant="top" src={product.image} alt={product.name} style={{ width: '150px', margin:'5px' }} />
                             <Card.Body>
                                 <Card.Title>{product.name}</Card.Title>
                                 <Card.Text>{product.price}</Card.Text>
-                                {product.stock === 0 ? <h5 className="text-red-900">Sin Stock</h5> :  <Button >comprar</Button>}
+                                {product.stock === 0 ? <h5 className="text-red-900">Sin Stock</h5> :  <Button variant='dark'>Ver detalle</Button>}
                             </Card.Body>
                         </Link>
                     </Card>
