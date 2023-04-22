@@ -1,54 +1,29 @@
-import { Carousel } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
-import { Card, Col, Row, Container } from 'react-bootstrap';
+import { Button, Card, Col, Row, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
   return (
     <div>
+      <div className='hero-container'>
+        <h1>DISFRUTA DE NUESTRAS BEBIDAS</h1>
+        <p>Conoce nuestro catálogo y haz tu pedido</p>
+        <p>Aceptamos todo medio de pago</p>
+        <div className='hero-btns'>
+          <Button
+            className='btns'
+            buttonStyle='btn--primary'
+            buttonSize='btn--large'
+            href='/products'
+          >
+            VER CATÁLOGO
+          </Button>
+        </div>
+      </div>
       <Col>
-        <div className='col-12'>
-          <h2 className='text-center'>
-            Distribuidora de bebidas Internacionales
-          </h2>
-        </div>
-        <div>
-          <Carousel className='carrucel text-center'>
-            <Carousel.Item>
-              <img
-                className='d-block w-100 imagenn'
-                src='https://images.unsplash.com/photo-1535990379313-5cd271a2da2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'
-                alt='First slide'
-              />
-              <Carousel.Caption>
-                <h3>Las mejores bebidas del mercado</h3>
-                <p>Con las marcas más conocidas a nivel internacional.</p>
-                <Button variant='dark' href='/products'>
-                  {' '}
-                  Ver Catalogo{' '}
-                </Button>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className='d-block w-100 imagenn'
-                src='https://images.unsplash.com/photo-1622483767028-3f66f32aef97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
-                alt='Second slide'
-              />
-              <Carousel.Caption>
-                <h3>Segunda Bebida</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <Button variant='dark' href='/products'>
-                  {' '}
-                  Ver Catalogo{' '}
-                </Button>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-        </div>
         <div className='tarjetas'>
           <Col style={{ textAlign: 'center' }}>
+            <br></br>
             <h1>Revisa nuestros productos</h1>
           </Col>
           <Container>

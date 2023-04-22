@@ -7,8 +7,7 @@ import { useContext, useEffect } from 'react';
 import UserContext from '../../context/user/UserContext';
 import Products from '../../pages/products/Products';
 import Product from '../../pages/product/Product';
-import Checkout from '../pages/checkout/Checkout';
-
+import Checkout from '../../pages/checkout/Checkout';
 
 const Rutas = () => {
   const { verifyToken, authStatus } = useContext(UserContext);
@@ -31,8 +30,7 @@ const Rutas = () => {
           <Route path='/products' element={<Products />} />
           <Route path='/product/:id' element={<Product />} />
           <Route path='/checkout' element={<Checkout />} />
-          <Route path='*' element={<Navigate to="/" />} />
-
+          <Route path='*' element={<Navigate to='/' />} />
         </Route>
       </Routes>
     </>
