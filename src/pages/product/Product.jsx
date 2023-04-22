@@ -1,6 +1,7 @@
 import ProductContext from "../../context/product/ProductContext";
 import { useContext, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import CartContext from "../../context/cart/CartContext";
 
 const Product = () => {
     const { id } = useParams();
@@ -8,7 +9,7 @@ const Product = () => {
     const { getProduct, product } = useContext(ProductContext);
     const { addItemToCart, cartCount } = useContext(CartContext);
     const handleAdd = () => { if(cartCount < stock) addItemToCart(product[0])};
-    const { name, stock, price, image, SKU, description } = product[0];
+    const { name, stock, price, image, SKU } = product[0];
   
     useEffect(() => {
       const fetchProduct = async () => {
