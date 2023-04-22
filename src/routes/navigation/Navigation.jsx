@@ -1,14 +1,21 @@
-import { Nav, Navbar, NavDropdown, Container, NavbarBrand,} from 'react-bootstrap';
+import {
+  Nav,
+  Navbar,
+  NavDropdown,
+  Container,
+  NavbarBrand,
+  Button,
+} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { useContext } from "react";
-import UserContext from "../../context/user/UserContext";
+import { useContext } from 'react';
+import UserContext from '../../context/user/UserContext';
 import CartContext from "../../context/cart/CartContext";
 
-
 const Navigation = () => {
-  const { infoUser, signOut, authStatus} = useContext(UserContext);
+  const { infoUser, signOut, authStatus } = useContext(UserContext);
   const { isCartOpen } = useContext(CartContext);
-  const { name } = infoUser;
+  const { name, email } = infoUser;
+
 
 
   return (
@@ -25,21 +32,28 @@ const Navigation = () => {
               <Nav.Link as={NavLink} to='/products'>
                 Productos
               </Nav.Link>
-              <NavDropdown title='Admin'>
-                <NavDropdown.Item as={NavLink} to='/admin/users'>
-                  Users
-                </NavDropdown.Item>
-              </NavDropdown>
+              {authStatus && (
+                <NavDropdown title={name}>
+                  <NavDropdown.Item as={NavLink} to='/user/profile'>
+                    Mi Perfil
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={NavLink} to='/user/options'>
+                    Opciones
+                  </NavDropdown.Item>
+                </NavDropdown>
+              )}
             </Nav>
             <Nav>
-              {authStatus ? <Button onClick={signOut} className="me-3">Logout</Button> : <Nav.Link className="me-3" as={NavLink} to="/auth">Login</Nav.Link>}
-              <CartIcon />
-              {isCartOpen && <CartDropdown />}
-            </Nav>   
-            <Nav>
-              <Nav.Link as={NavLink} to='/auth'>
-                Login
-              </Nav.Link>
+              {authStatus ? (
+                <Button onClick={signOut} className='me-3'>
+                  Logout
+                </Button>
+              ) : (
+                <Nav.Link as={NavLink} to='/auth'>
+                  Login
+                </Nav.Link>
+              )}
+
             </Nav>
           </Navbar.Collapse>
         </Container>
