@@ -44,7 +44,6 @@ const UserProvider = ({ children }) => {
 
     if (token) {
       axiosClient.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      // Authorization = Bearer askjdhaskjdhasjky789216
     } else {
       delete axiosClient.defaults.headers.common['Authorization'];
     }
