@@ -1,5 +1,6 @@
 const userReducer = (state, action) => {
   const { type, payload } = action;
+  console.log('Prueba')
 
   switch (type) {
     case 'REGISTER/LOGIN':
