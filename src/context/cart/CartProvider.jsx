@@ -14,10 +14,7 @@ const CartProvider = ({children}) => {
 
     const [{isCartOpen, cartItems, cartCount, cartTotal}, dispatch] = useReducer(cartReducer, initialState)
 
-    //* Funcion que actualiza los productos en mi reducer del carrito (funcion acumuladora)
-
     const updateCartItemsReducer = (newCartItems) => {
-        // reduce es un metodo de array que sirve para acumular valores
         const newCartCount = newCartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
         const newCartTotal = newCartItems.reduce((total, cartItem) => total + cartItem.quantity * cartItem.price, 0);
 
@@ -58,12 +55,6 @@ const CartProvider = ({children}) => {
             payload: bool
         })
     }
-
-
-
-
-
-    
 
   return (
     <CartContext.Provider value={{isCartOpen, cartItems, cartCount, cartTotal, addItemToCart, removeItemToCart, clearItemToCart, clearItemFromCheckout, setIsCartOpen}}>{children}</CartContext.Provider>

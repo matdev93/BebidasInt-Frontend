@@ -20,7 +20,6 @@ const ProductProvider = ({children}) => {
 
     const [productState, dispatch] = useReducer(productReducer, initialState)
 
-    // productState el estado actual
     const getProducts = async() => {
         try {
             const products = await axiosClient.get("/products")
